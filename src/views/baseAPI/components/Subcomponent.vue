@@ -1,7 +1,8 @@
 <!-- This is the html template -->
 <template>
   <div class="about">
-    <!-- 子组件 -->
+    <!-- 子组件传递了两个参数-->
+    <!-- The child component passed two parameters -->
     <HelloWorld :msg="msg" :callback="cb" />
   </div>
 </template>
@@ -19,10 +20,6 @@ export default {
     return {
       msg: "This is a subcomponent",
     };
-  },
-  // After the instance is created
-  created() {
-    this.init();
   },
   // Function method
   methods: {

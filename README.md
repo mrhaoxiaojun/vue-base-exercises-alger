@@ -1,4 +1,5 @@
 # my-project
+C:\training_sod\develop-technical-training\we-FE-exercise
 
 ## Project setup
 ```

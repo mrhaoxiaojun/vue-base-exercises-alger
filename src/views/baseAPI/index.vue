@@ -1,6 +1,15 @@
 <template>
   <div class="base-api">
+
+    <!-- Tabs和TabPane 是iview的UI组件 -->
+    <!-- Tabs and TabPane are UI components of iview -->
+
+    <!-- @on-click 是iview官方组件提供的事件 -->
+    <!-- @on-click is an event provided by the official iview component -->
+    <!-- Official website address:https://www.iviewui.com/components/tabs-en -->
+    
      <Tabs value="Interpolation" @on-click="clc">
+       <!-- label 选项卡头显示文字；name 唯一标识，对应value-->
         <TabPane label="Interpolation" name="Interpolation"></TabPane>
         <TabPane label="ClassAndStyle" name="ClassAndStyle"></TabPane>
         <TabPane label="Conditional" name="Conditional"></TabPane>
@@ -13,10 +22,12 @@
         <TabPane label="LifeCycle" name="LifeCycle"></TabPane>
         <TabPane label="All" name="All"></TabPane>
     </Tabs>
+    <!-- component 动态组件; v-bind:is绑定当前组件-->
     <component v-bind:is="currentTabComponent"></component>
   </div>
 </template>
 <script>
+// 导入组件
 import Interpolation from './components/Interpolation'
 import ClassAndStyle from './components/ClassAndStyle'
 import Conditional from './components/Conditional'
@@ -29,7 +40,7 @@ import Subcomponent from './components/Subcomponent'
 import LifeCycle from './components/LifeCycle'
 import All from './components/All'
 export default {
-  name:"base",
+  // 注册组件
   components:{
     Interpolation,
     ClassAndStyle,
@@ -45,11 +56,12 @@ export default {
   },
   data() {
     return {
-      currentTabComponent:Interpolation
+      currentTabComponent:Interpolation,
     }
   },
   methods: {
     clc(name){
+      // this执行vue的实例，可以直接访问data里的变量
       this.currentTabComponent = name
     }
   },
@@ -66,7 +78,8 @@ export default {
   border-bottom: 1px dashed red;
   font-size: 16px;
 }
-.lable {
+.lable,
+.label {
   display: inline-block;
   font-size: 20px;
   font-weight: bold;

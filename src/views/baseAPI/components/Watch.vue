@@ -33,12 +33,19 @@ export default {
   },
   // Observe data changes
   watch: {
-    num: function (val, oldVal) {
-      this.changeNum = `new: ${val}, old: ${oldVal}`;
+    /**
+     * num: 被监控数据 Monitored data
+     * */  
+    num: function (newval, oldVal) {
+      // this 指向vue可以直接访问data里的变量
+      // this points to vue to directly access the variables in data
+      this.changeNum = `new: ${newval}, old: ${oldVal}`;
     },
   },
   // After the instance is created
   created() {
+    // this 指向vue可以直接访问methods里的方法
+    // this points to vue can directly access the methods in methods
     this.init();
   },
   // Function method

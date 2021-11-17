@@ -1,10 +1,16 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
+    <!-- 如果msg变量里包含'subcomponent'就显示这部分内容 -->
+    <!-- If the msg variable contains'subcomponent', this part of the content will be displayed -->
     <div v-if="msg.indexOf('subcomponent') > -1">
       <input type="text" v-model="parentMsg" placeholder="edit me">&ensp;
+      <!-- 执行我们接收到的函数‘callback’ -->
+      <!-- Execute the function ‘callback’ we received -->
       <button @click="callback(parentMsg)">Emit to the parent component</button>
     </div>
+    <!-- 否则显示这部分内容 -->
+    <!-- Otherwise display this part of the content -->
     <div v-else>
       <p>
       For a guide and recipes on how to configure / customize this project,<br>
@@ -41,7 +47,11 @@
 export default {
   name: 'HelloWorld',
   props: {
+    // 接收参数msg，类型是字符串
+    // Receive parameter msg, type is string
     msg: String,
+    // 接受参数是"callback"，类型是函数类型
+    // The accepted parameter is "callback" and the type is function type
     callback:{
       type:Function,
       default:()=>{}

@@ -11,6 +11,11 @@
         <p>Message is: {{ message }}</p><br>
 
         <!-- 复选框 Checkbox-->
+        <!-- 公用一个"v-model"的变量代表一个组合 -->
+        <!-- A common "v-model" variable represents a combination -->
+        
+        <!-- 'for="jack"'是为了描述'id="jack"'的元素 -->
+        <!-- 'for="jack"' is to describe the element of'id="jack"' -->
         checkbox: 
         <input type="checkbox" id="jack" value="Jack" v-model="checkedNames">
         <label for="jack">Jack</label>

@@ -12,18 +12,23 @@
           <div class="commodity_text_footer">
             <span class="price">{{ item.price }}</span
             ><span class="da">DA</span>
-            <!-- 添加事件 -->
-            <!-- Add event -->
+       
+            <!-- 如果库存大于0的话，使用"commodity_text_right"这个类名，小于0的话使用后面的类名 -->
+            <!-- If the inventory is greater than 0, use the class name "commodity_text_right", if it is less than 0, use the following class name -->
+            <!-- ?: 是"JavaScript" 的条件表达式语法 -->
+            <!-- ?: Is the conditional expression syntax of "JavaScript" -->
             <span 
-              :class="[item.inventory >0  ? 'commodity_text_right':'commodity_text_right commodity_text_null']" 
+              :class="[item.inventory > 0  ? 'commodity_text_right':'commodity_text_right commodity_text_null']" 
               @click="add(item,index)">
               Ajouter au panier
             </span>
           </div>
-        </div>
+        </div> 
       </div>
     </div>
     <span class="addCart">vérifier le panier ⬇⬇⬇ </span>
+    <!-- 购物车列表组件 -->
+    <!-- Shopping cart list component -->
     <Panier :shopCartList="shopCartList"></Panier>
   </div>
 </template>
