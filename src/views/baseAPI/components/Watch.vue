@@ -15,15 +15,8 @@
 </template>
 <!-- This is Javascript -->
 <script>
-// JavaScript file import
-import HelloWorld from "@/components/HelloWorld.vue";
+
 export default {
-  // Component name
-  name: "About",
-  // Register subcomponents
-  components: {
-    HelloWorld,
-  },
   // Data object of Vue instance
   data() {
     return {

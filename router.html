@@ -12,31 +12,42 @@
 <div id="app">
   <h1>Hello vue-router</h1>
   <p>
-    <!-- 使用 router-link 组件来导航. -->
-    <!-- 通过传入 `to` 属性指定链接. -->
+    <!-- 使用" router-link "来为组件导航. -->
+    <!-- Use "router-link" to navigate the components -->
+
+
+    <!-- 通过传入 `to` 属性确定导航地址. -->
+    <!-- Determine the navigation address by passing in the `to` attribute. -->
+
+
     <!-- <router-link> 默认会被渲染成一个 `<a>` 标签 -->
+    <!-- It will be rendered as an `<a>` tag by default -->
     <router-link to="/foo">Go to Foo</router-link>
     <router-link to="/bar">Go to Bar</router-link>
   </p>
-  <!-- 路由出口 -->
   <!-- 路由匹配到的组件将渲染在这里 -->
+  <!-- Components matched by the route will be rendered here -->
   <router-view></router-view>
 </div>
 <script>
 
-  // 1. 定义 (路由) 组件。
+// 1. 定义 (路由) 组件。
+// 1. Define (routing) components.
 const Foo = { template: '<div>foo</div>' }
 const Bar = { template: '<div>bar</div>' }
 // 2. 定义路由
+// 2. Define the route
 const routes = [
   { path: '/foo', component: Foo },
   { path: '/bar', component: Bar }
 ]
 // 3. 创建 router 实例
+// 3. Create router instance
 const router = new VueRouter({
-  routes // (缩写) 相当于 routes: routes
+  routes // (Abbreviation) equivalent to  routes: routes
 })
 // 4. 创建和挂载根实例。
+// 4. Create and mount the root instance.
 const app = new Vue({
   router
 }).$mount('#app')
